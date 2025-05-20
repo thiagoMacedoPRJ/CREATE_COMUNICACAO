@@ -14,7 +14,6 @@ app = Flask(__name__)
 app.secret_key = 'SS'
 
 
-
 # Rota para a página inicial
 @app.route('/', methods=["GET", "POST"])
 def index():
@@ -27,24 +26,16 @@ def index():
 
 
 # Rota para a página inicial
-@app.route('/donates', methods=["GET", "POST"])
+@app.route('/servicos', methods=["GET", "POST"])
 def index2():
     return render_template('index2.html')
+    
+    
 
 
-
-
-
-
-# Rota para o QRCODE
-@app.route('/qrcode', methods=["GET", "POST"])
+@app.route('/portf', methods=["GET", "POST"])
 def index3():
-    if request.method == "GET":
-        return render_template('index3.html')
-    else:
-        data = list(request.form.to_dict())[0]
-        print(data)
-        return "nada."
+    return render_template('index3.html')
     
     
     
@@ -53,12 +44,7 @@ def index3():
     
     
     
-    
-    
-    
-    
-    
-    
+  
     
 def main():
     p = randint(0, 500000)
@@ -68,3 +54,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+
